@@ -1,38 +1,92 @@
-.App {
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style-type: none;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.container.container-sm {
+  max-width: 782px;
+}
+
+.container.container-md {
+  max-width: 1280px;
+}
+
+.container.container-lg {
+  max-width: 1440px;
+}
+
+.d-flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.d-flex.flex-column {
+  flex-direction: column;
+}
+
+.d-grid {
+  display: grid;
+}
+
+.text-center {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.title {
+  font-size: 3.75rem;
+  font-weight: 500;
+  margin: 3rem 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.title-main {
+  font-size: 5rem;
+  font-weight: 600;
+  margin: 4rem 0;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.subtitle {
+  font-size: 2.5rem;
+  font-weight: 400;
+  margin: 2rem 0;
 }
 
-.App-link {
-  color: #61dafb;
+.btn,
+.btn-whatapp,
+.btn-youtube,
+.btn-instagram,
+.btn-google,
+.btn-twitter {
+  margin: .25rem .125rem;
+  padding: .35rem 1.25rem;
+  font-family: inherit;
+  font-weight: 400;
+  font-size: 1rem;
+  letter-spacing: .6px;
+  border-radius: .3rem;
+  border: none;
+  box-shadow: 0 2px 5px rgba(51, 51, 51, 0.3);
+  transition: .3s ease;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.btn:hover {
+  cursor: pointer;
+  box-shadow: none;
+  transition: .3s ease;
+  background: rgba(0, 0, 0, 0.75);
 }
