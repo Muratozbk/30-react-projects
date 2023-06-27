@@ -7,7 +7,6 @@ export default function RandomizeColors() {
     }
 
     const handleSecClick = e => {
-        // console.log(e.target)
         console.log(getRamdomColor())
         let body = document.querySelector('body')
         body.style.background = getRamdomColor();
