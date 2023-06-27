@@ -18,7 +18,7 @@ export default function EsignatureApp() {
         outline: 'none',
         padding: '.35rem 0'
     }
-    document.body.style.background = '#eee'
+    document.body.style.background = '#ddd'
 
     return (
         <div className='container text-center'>
