@@ -6,7 +6,7 @@ import { FaUserAlt } from 'react-icons/fa'
 import { BiCommentDetail } from 'react-icons/bi'
 
 export default function TestimonialsApp() {
-
+    document.querySelector('body').style.background = '#ccc'
     const [testimonials, setTestimonials] = useState()
     const [items, setItems] = useState([])
 
@@ -31,11 +31,12 @@ export default function TestimonialsApp() {
                 btnClass={'btn-info mr-1'}
                 icon={<FaUserAlt />} onClick={() => setTestimonials('Users')} />
             <Button text={'Comments'}
-                btnClass={'btn-info'}
+                btnClass={'btn-success'}
                 icon={<BiCommentDetail />} onClick={() => setTestimonials('Comments')} />
 
             <Title text={!testimonials ? 'Select from above' : testimonials}
                 classes={'subtitle text-primary'} />
+
             {!items ? null :
                 items.map((item) => {
                     return <div key={item.id} className="card mb-2 card-primary text-center" style={{ margin: '0.8rem auto' }}>
