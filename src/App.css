@@ -149,6 +149,11 @@ img {
   color: white;
 }
 
+.btn-info {
+  background-color: rgb(20, 92, 224);
+  color: white;
+}
+
 .btn-success {
   background-color: green;
   color: #fff;
@@ -175,6 +180,11 @@ img {
   font-size: 1.7rem;
 }
 
+.card-primary {
+  background-color: #7633f9;
+  ;
+}
+
 .card-dark {
   background-color: #333;
   color: #ddd;
@@ -199,4 +209,8 @@ img {
 
 .m-auto {
   margin: auto;
+}
+
+.mr-1 {
+  margin-right: 1rem;
 }
