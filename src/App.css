@@ -204,6 +204,10 @@ img {
   font-size: 1.7rem;
 }
 
+.bg-danger {
+  background-color: rgb(238, 34, 34);
+}
+
 .card-primary {
   background-color: #7633f9;
   ;
@@ -287,4 +291,8 @@ img {
 .btn-close:hover {
   color: red;
   background-color: transparent;
+}
+
+.bg-info {
+  background-color: #2196F3;
 }
