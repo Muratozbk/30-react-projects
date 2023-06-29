@@ -96,6 +96,8 @@ img {
 .btn-instagram,
 .btn-google,
 .btn-twitter {
+  background-color: #222;
+  color: #eee;
   margin: .25rem .125rem;
   padding: .35rem 1.25rem;
   font-family: inherit;
@@ -108,11 +110,21 @@ img {
   transition: .3s ease;
 }
 
+.btn-light {
+  background-color: #eee;
+  color: #222;
+}
+
+.bg-light {
+  background-color: #eee;
+  color: #222;
+}
+
 .btn:hover {
   cursor: pointer;
   box-shadow: none;
   transition: .3s ease;
-  background: rgba(0, 0, 0, 0.75);
+  background: rgba(0, 0, 0, 0.35);
 }
 
 .btn-lg {
@@ -295,4 +307,9 @@ img {
 
 .bg-info {
   background-color: #2196F3;
+}
+
+.bg-dark {
+  background-color: #333;
+  color: #ddd;
 }

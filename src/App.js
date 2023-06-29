@@ -1,5 +1,6 @@
 import './App.css';
-import TemparatureControllerApp from './projects/06-temparature-controller/TemparatureControllerApp';
+import DarkMode from './projects/07-dark-mode/DarkMode';
+// import TemparatureControllerApp from './projects/06-temparature-controller/TemparatureControllerApp';
 // import AlertApp from './projects/05-Alerts/AlertApp';
 // import LikePhotoApp from './projects/03-like-photo/LikePhotoApp';
 // import RandomizeColors from './projects/02-randomize-colors/RandomizeColors';
@@ -14,8 +15,9 @@ function App() {
       {/* <LikePhotoApp /> */}
       {/* <TestimonialsApp /> */}
       {/* <AlertApp /> */}
+      {/* <TemparatureControllerApp /> */}
 
-      <TemparatureControllerApp />
+      <DarkMode />
     </div>
   );
 }
