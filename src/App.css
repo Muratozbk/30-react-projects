@@ -115,6 +115,10 @@ img {
   background: rgba(0, 0, 0, 0.75);
 }
 
+.btn-lg {
+  font-size: 1.6rem;
+}
+
 .text-primary {
   color: #7633f9;
 }
@@ -190,7 +194,7 @@ img {
 }
 
 .card {
-  width: 300px;
+  width: 350px;
   background-color: #ffffff;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);

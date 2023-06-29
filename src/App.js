@@ -1,5 +1,6 @@
 import './App.css';
-import AlertApp from './projects/05-Alerts/AlertApp';
+import TemparatureControllerApp from './projects/06-temparature-controller/TemparatureControllerApp';
+// import AlertApp from './projects/05-Alerts/AlertApp';
 // import LikePhotoApp from './projects/03-like-photo/LikePhotoApp';
 // import RandomizeColors from './projects/02-randomize-colors/RandomizeColors';
 // import EsignatureApp from './projects/01-e-signature-app/EsignatureApp';
@@ -12,8 +13,9 @@ function App() {
       {/* <RandomizeColors /> */}
       {/* <LikePhotoApp /> */}
       {/* <TestimonialsApp /> */}
+      {/* <AlertApp /> */}
 
-      <AlertApp />
+      <TemparatureControllerApp />
     </div>
   );
 }
