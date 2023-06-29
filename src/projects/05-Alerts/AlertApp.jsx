@@ -9,6 +9,10 @@ export default function AlertApp() {
 
             <Alert type={'success'}
                 message={'Succesful login alert'} />
+
+            <Alert type={'info'}
+                message={'Time triggered info alert'}
+                delay={true} delayTime={3000} />
         </div>
     )
 }
