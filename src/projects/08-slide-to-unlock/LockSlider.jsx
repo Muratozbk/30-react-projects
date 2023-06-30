@@ -1,7 +1,7 @@
 import React from 'react'
 import "./LockSlider.css"
 
-export default function LockSlider({ showLock, width, handleInput, sliderValue }) {
+export default function LockSlider({ width, handleInput, sliderValue }) {
     let sliderStyle = {
         appearance: 'none',
         width: !width ? '300px' : width,

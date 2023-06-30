@@ -6,8 +6,8 @@ import HomeScreenImg from './img/home.jpg'
 
 export default function SlideToUnlock() {
     const [uiProps, setUiProps] = useState({
-        uiText: 'Unlock screen',
-        uiColor: '#eee',
+        uiText: 'Unlock Screen',
+        uiColor: '#1a6',
         uiBg: `url(${LockScreenImg}) center/cover`
     })
     const [showLock, setShowLock] = useState(true)
@@ -18,10 +18,6 @@ export default function SlideToUnlock() {
         // setShowLock(false)
     }
 
-    const resetSlider = () => {
-        setLockSliderValue(0);
-    };
-
     useEffect(() => {
         if (lockSliderValue > 99) {
             setShowLock(false)
@@ -29,7 +25,6 @@ export default function SlideToUnlock() {
                 ...prevState,
                 uiBg: `url(${HomeScreenImg}) center/cover`
             }))
-            resetSlider()
         }
 
     }, [lockSliderValue])
@@ -54,10 +49,8 @@ export default function SlideToUnlock() {
                 style={{ color: uiProps.uiColor }}>{uiProps.uiText}</h1>
             {showLock ?
                 <LockSlider handleInput={handleSliderInput}
-                    showLock={showLock} value={lockSliderValue} width={'264px'} />
+                    value={lockSliderValue} width={'264px'} />
                 : <AiFillUnlock onClick={handleClick} className='unlockIcon' />}
-
-
         </div>
     )
 }
