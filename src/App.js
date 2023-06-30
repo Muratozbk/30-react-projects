@@ -1,5 +1,6 @@
 import './App.css';
-import DarkMode from './projects/07-dark-mode/DarkMode';
+import SlideToUnlock from './projects/08-slide-to-unlock/SlideToUnlock';
+// import DarkMode from './projects/07-dark-mode/DarkMode';
 // import TemparatureControllerApp from './projects/06-temparature-controller/TemparatureControllerApp';
 // import AlertApp from './projects/05-Alerts/AlertApp';
 // import LikePhotoApp from './projects/03-like-photo/LikePhotoApp';
@@ -16,8 +17,9 @@ function App() {
       {/* <TestimonialsApp /> */}
       {/* <AlertApp /> */}
       {/* <TemparatureControllerApp /> */}
+      {/* <DarkMode /> */}
 
-      <DarkMode />
+      <SlideToUnlock />
     </div>
   );
 }

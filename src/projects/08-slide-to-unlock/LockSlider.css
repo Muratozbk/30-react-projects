@@ -1,0 +1,25 @@
+.slider::-webkit-slider-thumb {
+    /* background-color: rgba(188, 190, 188, 0.5); */
+    appearance: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: #aaa;
+    cursor: pointer;
+}
+
+.slider::-webkit-slider-thumb:active {
+    background: #f5f5f5;
+}
+
+.unlockIcon {
+    font-size: 77px;
+    color: rgba(240, 240, 240, 0.3);
+    cursor: pointer;
+    margin-bottom: 2rem;
+    transition: all .2s;
+}
+
+.unlockIcon:hover {
+    background: #f6f6f6;
+}

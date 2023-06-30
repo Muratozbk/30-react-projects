@@ -15,7 +15,8 @@ export default function Blog() {
                 top: 10, right: 10
             }}>
                 <Button text={theme === 'dark' ? 'Light' : 'Dark'}
-                    btnClass={`${theme === 'dark' && 'btn-light'}`} onClick={changeTheme} />
+                    btnClass={`${theme === 'dark' && 'btn-light'}`}
+                    onClick={changeTheme} />
             </span>
             <p>
                 Lorem ipsum, dolor sit amet consectetur adipisicing elit. Adipisci, eos error quos dolores magnam rerum reiciendis perspiciatis eveniet odit non?
