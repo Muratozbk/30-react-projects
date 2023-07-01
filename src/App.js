@@ -1,5 +1,6 @@
 import './App.css';
-import SliderApp from './projects/09-slider/SliderApp';
+import HiddenSearchBarApp from './projects/10-hidden-search-bar/HiddenSearchBarApp';
+// import SliderApp from './projects/09-slider/SliderApp';
 // import SlideToUnlock from './projects/08-slide-to-unlock/SlideToUnlock';
 // import DarkMode from './projects/07-dark-mode/DarkMode';
 // import TemparatureControllerApp from './projects/06-temparature-controller/TemparatureControllerApp';
@@ -8,6 +9,7 @@ import SliderApp from './projects/09-slider/SliderApp';
 // import RandomizeColors from './projects/02-randomize-colors/RandomizeColors';
 // import EsignatureApp from './projects/01-e-signature-app/EsignatureApp';
 // import TestimonialsApp from './projects/04-testimonials-app/TestimonialsApp';
+
 
 function App() {
   return (
@@ -20,8 +22,9 @@ function App() {
       {/* <TemparatureControllerApp /> */}
       {/* <DarkMode /> */}
       {/* <SlideToUnlock /> */}
+      {/* <SliderApp /> */}
 
-      <SliderApp />
+      <HiddenSearchBarApp />
     </div>
   );
 }

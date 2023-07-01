@@ -8,7 +8,8 @@ export default function SliderComp({ setValue, handleInput, textColor, bgColor }
         width: '25',
         backgroundColor: 'lightgray',
         cursor: 'pointer',
-        opacity: 0.7
+        opacity: 0.7,
+        borderRadius: '12px'
     }
 
     return (
