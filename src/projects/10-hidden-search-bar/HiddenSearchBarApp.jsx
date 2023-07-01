@@ -38,13 +38,14 @@ export default function HiddenSearchBarApp() {
         transitions: 'all .3s ease'
     }
 
-    const inputEl = useRef(null)
+    const inputEl = useRef()
 
     useEffect(() => {
         body.background = uiProps.bg;
         body.boxShadow = uiProps.shadow;
         body.transisiton = uiProps.transitions;
         uiProps.showSearchBar && inputEl.current.focus();
+        console.log(uiProps)
     }, [uiProps.shadow], [uiProps.showSearchBar]);
 
     const showSearch = () => {
@@ -73,7 +74,6 @@ export default function HiddenSearchBarApp() {
 
     return (
         <div className='container' style={{ height: '100vh' }}>
-
             {uiProps.showSearchIcon ?
                 <BsSearch style={bsSearchStyle}
                     onClick={showSearch} /> :

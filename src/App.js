@@ -1,5 +1,6 @@
 import './App.css';
-import HiddenSearchBarApp from './projects/10-hidden-search-bar/HiddenSearchBarApp';
+import PopupApp from './projects/11-magic-popup/PopupApp';
+// import HiddenSearchBarApp from './projects/10-hidden-search-bar/HiddenSearchBarApp';
 // import SliderApp from './projects/09-slider/SliderApp';
 // import SlideToUnlock from './projects/08-slide-to-unlock/SlideToUnlock';
 // import DarkMode from './projects/07-dark-mode/DarkMode';
@@ -23,8 +24,9 @@ function App() {
       {/* <DarkMode /> */}
       {/* <SlideToUnlock /> */}
       {/* <SliderApp /> */}
+      {/* <HiddenSearchBarApp /> */}
 
-      <HiddenSearchBarApp />
+      <PopupApp />
     </div>
   );
 }
