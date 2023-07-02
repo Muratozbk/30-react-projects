@@ -10,6 +10,7 @@ export default function PopupApp() {
 
     const triggerPopup = () => {
         setTrigger(true)
+        setWarningTrigger(true)
     }
 
     useEffect(() => {
