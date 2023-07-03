@@ -16,10 +16,11 @@ export const Progressbar = ({ bgColor, completed }) => {
         transition: 'width 1s ease-in-out'
     }
     const labelStyles = {
-        padding: 15,
-        margin: 10,
+        padding: 3,
+        margin: 12,
         color: '#fff',
-        fontWeight: 'bold'
+        fontWeight: 'bold',
+        display: 'block'
     }
 
     return (

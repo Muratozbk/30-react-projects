@@ -1,5 +1,6 @@
 import './App.css';
-import ProgressBarsContainer from './projects/12-project-progress-app/ProgressBarsContainer';
+// import ProgressBarsContainer from './projects/12-project-progress-app/ProgressBarsContainer';
+import DialogBox from './projects/13-dialog-box/DialogBox';
 // import PopupApp from './projects/11-magic-popup/PopupApp';
 // import HiddenSearchBarApp from './projects/10-hidden-search-bar/HiddenSearchBarApp';
 // import SliderApp from './projects/09-slider/SliderApp';
@@ -27,7 +28,8 @@ function App() {
       {/* <SliderApp /> */}
       {/* <HiddenSearchBarApp /> */}
       {/* <PopupApp /> */}
-      <ProgressBarsContainer />
+      {/* <ProgressBarsContainer /> */}
+      <DialogBox />
     </div>
   );
 }

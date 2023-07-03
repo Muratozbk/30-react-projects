@@ -317,3 +317,8 @@ img {
   background-color: #333;
   color: #ddd;
 }
+
+.btn-block {
+  display: block;
+  width: 100%;
+}
