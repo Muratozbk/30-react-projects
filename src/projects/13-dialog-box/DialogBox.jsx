@@ -9,7 +9,7 @@ export default function DialogBox({ width = 400 }) {
         title: 'Hello',
         description: 'Would you like to subscribe?',
         state: null,
-        justifyContent: 'space-between'
+        justifyContent: 'space-around'
     });
 
     const handleSubscribe = () => {
@@ -68,7 +68,6 @@ export default function DialogBox({ width = 400 }) {
                         gridTemplateColumns: '2fr 1fr',
                         alignItems: 'center',
                         justifyContent: 'center',
-                        alignSelf: 'center'
                     }}>
                     <section>
                         <h2 className="card-title">{subscription.title}</h2>
@@ -81,12 +80,13 @@ export default function DialogBox({ width = 400 }) {
             <div className="mb-2 d-flex" style={{ padding: '.5rem 1rem', justifyContent: `${subscription.justifyContent}`, width: '100%' }}>
                 {subscription.state === null &&
                     <Button btnClass={'btn-light'} text='Cancel' />}
-                {subscription.state === 'subscribed' ? null :
+                {subscription.state === 'subscribed' ? <Button btnClass={'btn-danger btn-block'} text='Unsubscribe'
+                    onClick={handleUnsubscribe} /> :
                     <Button btnClass={'btn-danger'} text='Subscribe'
                         onClick={handleSubscribe} />}
-                {subscription.state === 'subscribed' ?
+                {/* {subscription.state === 'subscribed' ?
                     <Button btnClass={'btn-danger btn-block'} text='Unsubscribe'
-                        onClick={handleUnsubscribe} /> : null}
+                        onClick={handleUnsubscribe} /> : null} */}
             </div>
         </div>
     )
