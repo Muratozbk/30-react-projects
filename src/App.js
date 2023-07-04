@@ -1,5 +1,6 @@
 import './App.css';
-import FilterContacts from './projects/14-filter-contacts/FilterContacts';
+import RegistrationFormApp from './projects/15-Form-Registration/RegistrationFormApp';
+// import FilterContacts from './projects/14-filter-contacts/FilterContacts';
 // import ProgressBarsContainer from './projects/12-project-progress-app/ProgressBarsContainer';
 // import DialogBox from './projects/13-dialog-box/DialogBox';
 // import PopupApp from './projects/11-magic-popup/PopupApp';
@@ -31,7 +32,8 @@ function App() {
       {/* <PopupApp /> */}
       {/* <ProgressBarsContainer /> */}
       {/* <DialogBox /> */}
-      <FilterContacts />
+      {/* <FilterContacts /> */}
+      <RegistrationFormApp />
     </div>
   );
 }
