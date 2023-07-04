@@ -18,6 +18,8 @@ export default function RegistrationFormApp() {
         password: ''
     })
 
+    const [submit, setSubmit] = useState(false)
+
     const handleSubmit = (e) => {
         e.preventDefault();
         if (!values.user_name) {
@@ -27,7 +29,13 @@ export default function RegistrationFormApp() {
         } else if (!values.password) {
             inputPassword.current.focus()
         }
+        if (values.user_name && values.email && values.password) {
+            setValid(true)
+        }
+        setSubmit(true)
     }
+
+    const [valid, setValid] = useState(false)
 
     const handleNameChange = (e) => {
         setValues({ ...values, user_name: e.target.value })
@@ -41,36 +49,46 @@ export default function RegistrationFormApp() {
 
     return (
         <div className='m-auto'>
-            {/* Form Desing */}
+            {/* Alert and Welcome */}
 
-            <div className="shadow-sm container m-auto mt-4"
-                style={{ padding: '2rem', border: '1px solid #55a' }}>
-                <Title text={'Registration'} />
+            {submit && valid ? (
+                <>
+                    <Alert type={'success'} message={'Registration was succesfull!'}
+                        delay={true} delayTime={5000} />
+                    <Title text={`Welcome ${values.user_name}`} />
+                </>
+            ) : (
+                < div className="shadow-sm container m-auto mt-4"
+                    style={{ padding: '2rem', border: '1px solid #55a' }}>
+                    <Title text={'Registration'} />
 
-                <form onSubmit={handleSubmit} >
-                    <div className="form-group mb-1 ">
-                        <input ref={inputName} type="text"
-                            placeholder=' Enter Your Name'
-                            value={values.user_name}
-                            onChange={handleNameChange} />
-                        <label className="text-danger">Please enter your name</label>
-                    </div>
-                    <div className="form-group mb-1">
-                        <input type="email" ref={inputEmail} placeholder=' Enter Your Email' onChange={handleEmailChange}
-                            value={values.email} />
-                        <label className="text-danger">Please enter your email</label>
-                    </div>
-                    <div className="form-group mb-1">
-                        <input type="password" ref={inputPassword}
-                            onChange={handlePasswordChange}
-                            placeholder=' Enter Your Password' value={values.password} />
-                        <label className="text-danger">Please enter your password</label>
-                    </div>
+                    <form onSubmit={handleSubmit} >
+                        <div className="form-group mb-1 ">
+                            <input ref={inputName} type="text"
+                                placeholder=' Enter Your Name'
+                                value={values.user_name}
+                                onChange={handleNameChange} />
 
-                    <Button text='Register' btnClass={'btn-primary'} />
-                </form>
+                            {submit && !values.user_name ? (<label className="text-danger">Please enter your name</label>)
+                                : null}
+                        </div>
+                        <div className="form-group mb-1">
+                            <input type="email" ref={inputEmail} placeholder=' Enter Your Email' onChange={handleEmailChange}
+                                value={values.email} />
+                            {submit && !values.email && <label className="text-danger">Please enter your email</label>}
+                        </div>
+                        <div className="form-group mb-1">
+                            <input type="password" ref={inputPassword}
+                                onChange={handlePasswordChange}
+                                placeholder=' Enter Your Password' value={values.password} />
+                            {submit && !values.password && <label className="text-danger">Please enter your password</label>}
+                        </div>
 
-            </div>
-        </div>
+                        <Button text='Register' btnClass={'btn-primary'} />
+                    </form>
+                </div >
+            )
+            }
+        </div >
     )
 }
