@@ -1,5 +1,6 @@
 import './App.css';
-import NotesApp from './projects/16-notes-app/NotesApp';
+// import NotesApp from './projects/16-notes-app/NotesApp';
+import ResponsiveNavApp from './projects/17-responsive-navigation/ResponsiveNavApp';
 // import RegistrationFormApp from './projects/15-Form-Registration/RegistrationFormApp';
 // import FilterContacts from './projects/14-filter-contacts/FilterContacts';
 // import ProgressBarsContainer from './projects/12-project-progress-app/ProgressBarsContainer';
@@ -35,8 +36,8 @@ function App() {
       {/* <DialogBox /> */}
       {/* <FilterContacts /> */}
       {/* <RegistrationFormApp /> */}
-
-      <NotesApp />
+      {/* <NotesApp /> */}
+      <ResponsiveNavApp />
     </div>
   );
 }

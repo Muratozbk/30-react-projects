@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 
 export const NoteStyle = styled.div``;
+
 export const Icons = styled.span`
 display: flex;
 justify-content: space-between;

@@ -39,7 +39,7 @@ export default function NotesApp() {
                 style={{ flexWrap: 'wrap', gap: 25 }}>
 
                 {notes.map((note) => (
-                    <NewNote key={note.id} note={note} onClick={deleteNote}
+                    <NewNote key={note.id} note={note} onClickk={deleteNote}
                         cardBg={randomizeBg()} />
                 ))}
             </div>

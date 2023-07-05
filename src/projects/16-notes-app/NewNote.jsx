@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import { NoteStyle, Icons, DeleteIcon } from './NotesStyle'
 import { MdOutlineNoteAlt, MdDeleteForever } from 'react-icons/md'
 
-export default function NewNote({ cardBg, note, onClick, text }) {
+export default function NewNote({ cardBg, note, onClickk, text }) {
     const [newCardBg, setNewCardbg] = useState();
 
     useEffect(() => {
@@ -16,7 +16,7 @@ export default function NewNote({ cardBg, note, onClick, text }) {
                 <Icons>
                     <MdOutlineNoteAlt />
                     <DeleteIcon>
-                        <MdDeleteForever onClick={() => onClick(note.id)} />
+                        <MdDeleteForever onClick={() => onClickk(note.id)} />
                     </DeleteIcon>
                 </Icons>
             </div>
