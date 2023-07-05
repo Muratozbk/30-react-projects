@@ -27,7 +27,7 @@ img {
 }
 
 .container.container-sm {
-  max-width: 782px;
+  max-width: 762px;
 }
 
 .container.container-md {
@@ -226,6 +226,26 @@ img {
 
 .card-primary {
   background-color: #7633f9;
+  ;
+}
+
+.card-success {
+  background-color: green;
+  ;
+}
+
+.card-danger {
+  background-color: red;
+  ;
+}
+
+.card-warning {
+  background-color: yellow;
+  ;
+}
+
+.card-info {
+  background-color: royalblue;
   ;
 }
 
