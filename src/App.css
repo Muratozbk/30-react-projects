@@ -75,7 +75,7 @@ img {
 }
 
 .App {
-  padding: 1rem;
+  /* padding: 1rem; */
 }
 
 .fadeAlert {
@@ -137,6 +137,10 @@ img {
 
 .text-primary {
   color: #7633f9;
+}
+
+.text-light {
+  color: #fff;
 }
 
 .mb-1 {
@@ -202,6 +206,10 @@ img {
 .btn-primary {
   background-color: #7633f9;
   color: #fff;
+}
+
+.bg-primary {
+  background-color: #7633f9;
 }
 
 .btn-warning {
@@ -372,16 +380,12 @@ nav {
 }
 
 .navbar-logo {
-  height: 40px;
+  /* height: 35px; */
   width: auto;
 }
 
 .navbar-items {
   list-style: none;
-  display: flex;
-  margin: 0;
-  padding: 0;
-  flex-direction: column;
 }
 
 .nav-item {
@@ -390,19 +394,17 @@ nav {
 
 .nav-link {
   text-decoration: none;
-  color: #333;
   padding: 5px;
 }
 
 .navbar-brand {
   text-decoration: none;
-  color: #333;
   padding: 1rem;
   font-weight: bold;
   font-size: 1.2rem;
 }
 
 .navbar-menu li a:hover {
-  color: #000;
-  background-color: #e1e1e1;
+  /* color: #000;
+  background-color: #e1e1e1; */
 }
