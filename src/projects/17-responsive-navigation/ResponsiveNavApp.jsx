@@ -11,6 +11,8 @@ export default function ResponsiveNavApp() {
         navOpened: false,
     })
 
+    const [pageTitle, setPageTitle] = useState('')
+
     useEffect(() => {
         window.onresize = () => {
             let windowWidth = window.innerWidth;
@@ -42,25 +44,38 @@ export default function ResponsiveNavApp() {
         })
     }
 
-    return (
-        <NavStyle className={`navbar bg-primary text-light ${showElement.navOpened && 'showNavbar'}`}>
-            <div className="navbar-logo ">
-                <a href="#" className='navbar-brand text-light'>
-                    William VN
-                </a>
-                {/* open and close icons */}
-                {showElement.hamburgerIcon && <AiOutlineMenu onClick={openNav} />}
-                {showElement.closeIcon && <AiOutlineClose onClick={closeNav} />}
+    const handleActive = (e) => {
+        e.preventDefault()
+        document.querySelectorAll('.nav-link').forEach((navLink) =>
+            navLink.classList.remove('active'));
+        e.target.classList.add('active')
+        setPageTitle(e.target.innerText)
+    }
 
-            </div>
-            <div className="navbar-collapse">
-                {showElement.navbarNav ?
-                    <ul className={`navbar-items ${showElement.navOpened && 'showNavbar'}`}>
-                        <NavItem text={'Home'} active='active' />
-                        <NavItem text={'About'} />
-                        <NavItem text={'Contact'} />
-                    </ul> : null}
-            </div>
-        </NavStyle>
+    return (
+        <>
+            <NavStyle className={`navbar bg-primary text-light ${showElement.navOpened && 'showNavbar'}`}>
+                <div className="navbar-logo ">
+                    <a href="#" className='navbar-brand text-light'>
+                        William VN
+                    </a>
+                    {/* open and close icons */}
+                    {showElement.hamburgerIcon && <AiOutlineMenu onClick={openNav} />}
+                    {showElement.closeIcon && <AiOutlineClose onClick={closeNav} />}
+
+                </div>
+                <div className="navbar-collapse">
+                    {showElement.navbarNav ?
+                        <ul className={`navbar-items ${showElement.navOpened && 'showNavbar'}`}>
+                            <NavItem text={'Home'} active='active' onClick={handleActive} />
+                            <NavItem text={'About'} onClick={handleActive} />
+                            <NavItem text={'Contact'} onClick={handleActive} />
+                        </ul> : null}
+                </div>
+            </NavStyle>
+            <h1 className='title text-center text-primary'>
+                {!pageTitle ? 'Home' : pageTitle}
+            </h1>
+        </>
     )
 }
