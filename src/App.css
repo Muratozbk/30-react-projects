@@ -232,6 +232,10 @@ img {
   background-color: rgb(238, 34, 34);
 }
 
+.bg-warning {
+  background-color: yellow;
+}
+
 .card-primary {
   background-color: #7633f9;
   ;
