@@ -2,8 +2,6 @@ import React from 'react'
 
 
 export default function SpaceShip({ start, changeShip, scale }) {
-    let animation = start;
-
     return (
         <>
             <img src={changeShip} alt="Space Ship"
@@ -11,7 +9,7 @@ export default function SpaceShip({ start, changeShip, scale }) {
                     position: 'absolute',
                     bottom: 50, zIndex: 1,
                     width: scale
-                }} className={animation} />
+                }} className={start} />
         </>
     )
 }

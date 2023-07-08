@@ -47,7 +47,9 @@ export default function SpacePenguinApp() {
                 {/* MoonObj  */}
                 <MoonObj Moon={Moon} />
                 {/* PlanetObj  */}
-                <PlanetObj planet={Planet} />
+                {/* <PlanetObj planet={Planet} /> */}
+                <img src={Planet} alt="Planet"
+                    className='planet' />
             </section>
 
             <Button text='Land' btnClass={'btn-info'}
