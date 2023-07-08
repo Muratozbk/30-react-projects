@@ -48,9 +48,9 @@ body {
 }
 
 .fly {
-    transform: translateY(-85px);
-    transition: all 5s ease-in;
+    transform: translateY(-81vh);
     opacity: 0;
+    transition: all 5s ease-in, opacity 6s ease-in;
 }
 
 .land {
