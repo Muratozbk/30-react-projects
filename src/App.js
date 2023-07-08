@@ -1,6 +1,7 @@
 import './App.css';
 // import TextAnimationApp from './projects/18-text-animation/TextAnimationApp';
-import CompoundInterestRate from './projects/19-compound-interest-rate/CompoundInterestRate';
+// import CompoundInterestRate from './projects/19-compound-interest-rate/CompoundInterestRate';
+import SpacePenguinApp from './projects/20-space-penguin/SpacePenguinApp';
 // import NotesApp from './projects/16-notes-app/NotesApp';
 // import ResponsiveNavApp from './projects/17-responsive-navigation/ResponsiveNavApp';
 // import RegistrationFormApp from './projects/15-Form-Registration/RegistrationFormApp';
@@ -41,8 +42,9 @@ function App() {
       {/* <NotesApp /> */}
       {/* <ResponsiveNavApp /> */}
       {/* <TextAnimationApp /> */}
+      {/* <CompoundInterestRate /> */}
 
-      <CompoundInterestRate />
+      <SpacePenguinApp />
     </div>
   );
 }
