@@ -15,6 +15,7 @@ export default function CompoundInterestRateCalc({
         PMT: monthlyContribution,
     }
 
+
     return (
         <div>
 

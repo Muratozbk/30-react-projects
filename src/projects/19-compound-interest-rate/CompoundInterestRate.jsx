@@ -13,8 +13,8 @@ export default function CompoundInterestRate() {
         monthlyContribtion: null,
         interestRate: '',
         years: ''
-    })
-
+    });
+    document.body.style.backgroundColor = '#2174af'
     return (
         <div className='container'>
             <div className="card card-primary bg-warning shadow-sm text-dark m-auto mt-4" style={{
@@ -25,48 +25,46 @@ export default function CompoundInterestRate() {
                 justifyContent: 'center'
             }}>
 
-                <div className="card-body" style={{
 
-                }}>
+                <FormGroup inputType={'number'}
+                    values={compound.principleAmount}
+                    reference={inputPrinciple}
+                    onChange={(e) => setCompound({
+                        ...compound,
+                        principleAmount: e.target.value
+                    })}
+                    labelText={'Principle Amount $'} />
 
-                    <FormGroup inputType={'number'}
-                        values={compound.principleAmount}
-                        reference={inputPrinciple}
-                        onChange={(e) => setCompound({
-                            ...compound,
-                            principleAmount: e.target.value
-                        })}
-                        labelText={'Principle amount $'} />
+                <FormGroup inputType={'number'}
+                    values={compound.monthlyContribtion}
+                    onChange={(e) => setCompound({
+                        ...compound,
+                        monthlyContribtion: e.target.value
+                    })}
+                    labelText={'Monthly Contribution $'} />
+                <FormGroup inputType={'number'}
+                    values={compound.interestRate}
+                    onChange={(e) => setCompound({
+                        ...compound,
+                        interestRate: e.target.value
+                    })}
+                    labelText={'Interest Rate %'} />
 
-                    <FormGroup inputType={'number'}
-                        values={compound.monthlyContribtion}
-                        onChange={(e) => setCompound({
-                            ...compound,
-                            monthlyContribtion: e.target.value
-                        })}
-                        labelText={'Monthly contribution $'} />
-                    <FormGroup inputType={'number'}
-                        values={compound.interestRate}
-                        onChange={(e) => setCompound({
-                            ...compound,
-                            interestRate: e.target.value
-                        })}
-                        labelText={'Interest Rate %'} />
+                <FormGroup inputType={'number'}
+                    values={compound.years}
+                    onChange={(e) => setCompound({
+                        ...compound,
+                        years: e.target.value
+                    })}
+                    labelText={'Years of Investment'} />
 
-                    <FormGroup inputType={'number'}
-                        values={compound.years}
-                        onChange={(e) => setCompound({
-                            ...compound,
-                            years: e.target.value
-                        })}
-                        labelText={'Years of investment'} />
 
-                </div>
-                <div className="card-footer mt-2 bg-primary text-right"
+                <div className="card-footer mt-1 bg-primary text-right"
                     style={{
                         color: '#fff',
                         textAlign: 'right',
-                        padding: '1.5rem'
+                        padding: '1.5rem ',
+                        width: '81%'
                     }}>
                     <CompoundInterestRateCalc
                         principleAmount={compound.principleAmount}
@@ -76,7 +74,6 @@ export default function CompoundInterestRate() {
                     />
                 </div>
             </div>
-
         </div>
     )
 }
