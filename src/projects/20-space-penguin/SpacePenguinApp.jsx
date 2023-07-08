@@ -11,6 +11,10 @@ import MoonObj from './objects/MoonObj'
 import Penguin from './image/penguin-svgrepo-com.svg'
 
 export default function SpacePenguinApp() {
+    const [shipProps, setShipProps] = useState({
+        action: '',
+        scale: 180,
+    })
 
     const startShip = () => {
         setShipProps({ action: 'fly', scale: 50 })
@@ -18,11 +22,6 @@ export default function SpacePenguinApp() {
     const landShip = () => {
         setShipProps({ action: 'land', scale: 180 })
     }
-
-    const [shipProps, setShipProps] = useState({
-        action: '',
-        scale: 180,
-    })
 
     const [shipType, setShipType] = useState(Ship)
 
