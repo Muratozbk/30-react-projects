@@ -9,7 +9,7 @@ export default function TaskTrackerApp() {
     const [newTask, setNewTask] = useState({
         date: '',
         type: '',
-        completed: ''
+        // completed: ''
     })
 
     const handleChangeDate = (e) => {
@@ -34,10 +34,10 @@ export default function TaskTrackerApp() {
         e.target.classList.toggle('completed')
 
     }
-    let index;
-    const handleDelteTask = (e) => {
-        window.confirm('Delte Task?') && setTaskList((tasklist) => {
-            const updatedTaskList = [...tasklist];
+
+    const handleDelteTask = (index) => {
+        window.confirm('Delte Task?') && setTaskList((prevList) => {
+            const updatedTaskList = [...prevList];
             updatedTaskList.splice(index, 1);
             return updatedTaskList;
         });

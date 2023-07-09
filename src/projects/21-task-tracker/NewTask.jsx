@@ -8,12 +8,13 @@ export default function NewTask({ type, date, index, onDelete, onTaskClick }) {
         <NewTaskStyle onClick={onTaskClick}>
             <div>
                 <h3>{type} </h3>
-                <small className='text-danger'>{date} </small>
+                <small className='text-primary'>{date} </small>
             </div>
             <Button btnClass={'btn-light'} text=''
                 icon={<RiDeleteBin6Fill />} style={{
                     fontSize: '1.2rem',
-                    // userSelect: 'none'
+                    userSelect: 'none',
+                    PointerEvent: 'none'
                 }}
                 onClick={() => onDelete(index)} />
         </NewTaskStyle>
