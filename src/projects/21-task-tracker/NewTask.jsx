@@ -3,7 +3,7 @@ import { NewTaskStyle } from './TableStyle'
 import Button from '../components/Button'
 import { RiDeleteBin6Fill } from 'react-icons/ri'
 
-export default function NewTask({ type, date, onDelete, onTaskClick }) {
+export default function NewTask({ type, date, index, onDelete, onTaskClick }) {
     return (
         <NewTaskStyle onClick={onTaskClick}>
             <div>
@@ -11,11 +11,11 @@ export default function NewTask({ type, date, onDelete, onTaskClick }) {
                 <small className='text-danger'>{date} </small>
             </div>
             <Button btnClass={'btn-light'} text=''
-                icon={<RiDeleteBin6Fill style={{
+                icon={<RiDeleteBin6Fill />} style={{
                     fontSize: '1.2rem',
-                    userSelect: 'none', pointerEvents: 'none'
+                    // userSelect: 'none'
                 }}
-                    onClick={onDelete} />} />
+                onClick={() => onDelete(index)} />
         </NewTaskStyle>
     )
 }

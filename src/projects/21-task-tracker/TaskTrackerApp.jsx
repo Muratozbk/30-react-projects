@@ -32,10 +32,15 @@ export default function TaskTrackerApp() {
 
     const handleCompleted = e => {
         e.target.classList.toggle('completed')
-    }
 
+    }
+    let index;
     const handleDelteTask = (e) => {
-        window.confirm('Delete this Task?') && e.target.parentElement.remove();
+        window.confirm('Delte Task?') && setTaskList((tasklist) => {
+            const updatedTaskList = [...tasklist];
+            updatedTaskList.splice(index, 1);
+            return updatedTaskList;
+        });
     }
 
     return (
@@ -59,7 +64,8 @@ export default function TaskTrackerApp() {
                                 date={taskItem.date}
                                 type={taskItem.type}
                                 onTaskClick={handleCompleted}
-                                onDelete={handleDelteTask} /> : null
+                                onDelete={handleDelteTask}
+                                index={idx} /> : null
                     )}
 
                 </ul>
