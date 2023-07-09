@@ -18,7 +18,7 @@ ul.table-row{
     margin-bottom: 25px;
     & li{
         background-color: #cfcfcf;
-        box-shadow: 0 0 5px 1px rgba(0,0,0,0.2);
+        box-shadow: 0 0 5px 1px rgba(0,0,0,0.3);
         border-radius: 3px;
     padding: 25px 30px;
     margin-bottom: 25px;
