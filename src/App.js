@@ -2,7 +2,8 @@ import './App.css';
 // import TextAnimationApp from './projects/18-text-animation/TextAnimationApp';
 // import CompoundInterestRate from './projects/19-compound-interest-rate/CompoundInterestRate';
 // import SpacePenguinApp from './projects/20-space-penguin/SpacePenguinApp';
-import TaskTrackerApp from './projects/21-task-tracker/TaskTrackerApp';
+// import TaskTrackerApp from './projects/21-task-tracker/TaskTrackerApp';
+import CardGameUI from './projects/22-card-game/CardGameUI';
 // import NotesApp from './projects/16-notes-app/NotesApp';
 // import ResponsiveNavApp from './projects/17-responsive-navigation/ResponsiveNavApp';
 // import RegistrationFormApp from './projects/15-Form-Registration/RegistrationFormApp';
@@ -45,7 +46,9 @@ function App() {
       {/* <TextAnimationApp /> */}
       {/* <CompoundInterestRate /> */}
       {/* <SpacePenguinApp /> */}
-      <TaskTrackerApp />
+      {/* <TaskTrackerApp /> */}
+
+      <CardGameUI />
     </div>
   );
 }

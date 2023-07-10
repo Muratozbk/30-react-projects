@@ -18,10 +18,9 @@ export default function TaskTrackerApp() {
     const handleType = (e) => {
         setNewTask({ ...newTask, type: e.target.value })
     }
+    // let tasks = [{ date: '', type: '' }];
 
-    let tasks = [{ date: '', type: '' }];
-
-    const [taskList, setTaskList] = useState(tasks)
+    const [taskList, setTaskList] = useState([])
 
     const addNewTask = () => {
         setTaskList([...taskList, {
@@ -38,6 +37,7 @@ export default function TaskTrackerApp() {
     const handleDelteTask = (index) => {
         window.confirm('Delte Task?') && setTaskList((prevList) => {
             const updatedTaskList = [...prevList];
+            console.log(index)
             updatedTaskList.splice(index, 1);
             return updatedTaskList;
         });
