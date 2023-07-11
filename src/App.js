@@ -4,7 +4,8 @@ import './App.css';
 // import SpacePenguinApp from './projects/20-space-penguin/SpacePenguinApp';
 // import TaskTrackerApp from './projects/21-task-tracker/TaskTrackerApp';
 // import CardGameUI from './projects/22-card-game/CardGameUI';
-import AnimatedLoginForm from './projects/23-Animated-login/AnimatedLoginForm';
+// import AnimatedLoginForm from './projects/23-Animated-login/AnimatedLoginForm';
+import PhoneBookMainApp from './projects/24-phone-book/PhoneBookMainApp';
 // import NotesApp from './projects/16-notes-app/NotesApp';
 // import ResponsiveNavApp from './projects/17-responsive-navigation/ResponsiveNavApp';
 // import RegistrationFormApp from './projects/15-Form-Registration/RegistrationFormApp';
@@ -49,8 +50,9 @@ function App() {
       {/* <SpacePenguinApp /> */}
       {/* <TaskTrackerApp /> */}
       {/* <CardGameUI /> */}
+      {/* <AnimatedLoginForm /> */}
 
-      <AnimatedLoginForm />
+      <PhoneBookMainApp />
     </div>
   );
 }
