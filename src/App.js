@@ -3,7 +3,8 @@ import './App.css';
 // import CompoundInterestRate from './projects/19-compound-interest-rate/CompoundInterestRate';
 // import SpacePenguinApp from './projects/20-space-penguin/SpacePenguinApp';
 // import TaskTrackerApp from './projects/21-task-tracker/TaskTrackerApp';
-import CardGameUI from './projects/22-card-game/CardGameUI';
+// import CardGameUI from './projects/22-card-game/CardGameUI';
+import AnimatedLoginForm from './projects/23-Animated-login/AnimatedLoginForm';
 // import NotesApp from './projects/16-notes-app/NotesApp';
 // import ResponsiveNavApp from './projects/17-responsive-navigation/ResponsiveNavApp';
 // import RegistrationFormApp from './projects/15-Form-Registration/RegistrationFormApp';
@@ -47,8 +48,9 @@ function App() {
       {/* <CompoundInterestRate /> */}
       {/* <SpacePenguinApp /> */}
       {/* <TaskTrackerApp /> */}
+      {/* <CardGameUI /> */}
 
-      <CardGameUI />
+      <AnimatedLoginForm />
     </div>
   );
 }
