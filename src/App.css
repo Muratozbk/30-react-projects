@@ -241,6 +241,10 @@ img {
   ;
 }
 
+.bg-primary {
+  background-color: #7633f9
+}
+
 .card-success {
   background-color: green;
   ;

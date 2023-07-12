@@ -5,7 +5,8 @@ import './App.css';
 // import TaskTrackerApp from './projects/21-task-tracker/TaskTrackerApp';
 // import CardGameUI from './projects/22-card-game/CardGameUI';
 // import AnimatedLoginForm from './projects/23-Animated-login/AnimatedLoginForm';
-import PhoneBookMainApp from './projects/24-phone-book/PhoneBookMainApp';
+// import PhoneBookMainApp from './projects/24-phone-book/PhoneBookMainApp';
+import ExpensesCalculatorApp from './projects/25-expenses-calculator/ExpensesCalculatorApp';
 // import NotesApp from './projects/16-notes-app/NotesApp';
 // import ResponsiveNavApp from './projects/17-responsive-navigation/ResponsiveNavApp';
 // import RegistrationFormApp from './projects/15-Form-Registration/RegistrationFormApp';
@@ -51,8 +52,9 @@ function App() {
       {/* <TaskTrackerApp /> */}
       {/* <CardGameUI /> */}
       {/* <AnimatedLoginForm /> */}
+      {/* <PhoneBookMainApp /> */}
 
-      <PhoneBookMainApp />
+      <ExpensesCalculatorApp />
     </div>
   );
 }
