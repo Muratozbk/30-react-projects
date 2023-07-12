@@ -9,6 +9,7 @@ export default function PhoneBookMainApp() {
     let dbContacts = getContacts()
     const [showContacts, setShowContacts] = useState(false)
     const [sortAZ, setSortAZ] = useState(true)
+    const [searchContact, setSearchContact] = useState('')
 
     const handleToggleContacts = () => {
         showContacts ? setShowContacts(false) : setShowContacts(true)
@@ -23,8 +24,10 @@ export default function PhoneBookMainApp() {
             <Title text={'Phone Book'} />
             <main className="bg-dark text-light"
                 style={{ padding: '1rem' }}>
+
                 <SearchFilter toggleContacts={handleToggleContacts}
-                    handleToggleSearch={toggleSortAZ} />
+                    handleToggleSearch={toggleSortAZ}
+                    handleSearchContact={setSearchContact} />
                 <div style={{
                     height: '600px',
                     overflow: 'auto'
@@ -32,11 +35,16 @@ export default function PhoneBookMainApp() {
                     <h2 className="subtitle text-center">Display Contacts</h2>
                     {showContacts && <ContactList
                         contacts={
-                            sortAZ ? dbContacts.sort((a, b) =>
+                            (sortAZ ? dbContacts.sort((a, b) =>
                                 a.first_name.localeCompare(b.first_name))
                                 : dbContacts.sort((a, b) =>
                                     b.first_name.localeCompare(a.first_name))
-                        } />}
+                            ).filter((contact) => {
+                                if (searchContact.trim() === '') { return contact }
+                                else if (contact.first_name.toLowerCase().includes(searchContact.toLowerCase())) {
+                                    return contact
+                                }
+                            })} />}
                 </div>
             </main>
 
