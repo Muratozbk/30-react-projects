@@ -8,11 +8,14 @@ export default function ContactList({ contacts }) {
     }
 
     return (
-        <div>
-            <Contact icon={`https://api.dicebear.com/6.x/${generateRandomImg()}/svg`}
-                firstName={''}
-                lastName={''}
-                phoneNr={''} />
-        </div>
+        <ul>
+            {contacts.map((contact, idx) => (
+                <Contact icon={`https://api.dicebear.com/6.x/${generateRandomImg()}/svg`}
+                    firstName={contact.first_name}
+                    lastName={contact.last_name}
+                    phoneNr={contact.phone} key={idx} />
+            ))}
+
+        </ul>
     )
 }
