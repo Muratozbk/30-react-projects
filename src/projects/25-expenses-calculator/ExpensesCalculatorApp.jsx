@@ -2,13 +2,14 @@ import React from 'react'
 import Title from '../components/Title'
 import Button from '../components/Button'
 import ExpensesForm from './components/ExpensesForm'
+import ExpensesList from './components/ExpensesList'
 
 export default function ExpensesCalculatorApp() {
     document.body.style.background = '#eee'
 
     return (
-        <main className='container'>
-            <Title text={'Expenses Calculator'} />
+        <main className='container' style={{ padding: '0 15px' }}>
+            <Title text={'Expenses Calculator'} classes={'subtitle mt-1 mb-1'} />
             {/* Alert comp */}
 
             <section style={{
@@ -32,7 +33,9 @@ export default function ExpensesCalculatorApp() {
                 </aside>
             </section>
 
-            <section>  {/* <ExpensesList/> */}  </section>
+            <section>
+                <ExpensesList />
+            </section>
         </main>
     )
 }
