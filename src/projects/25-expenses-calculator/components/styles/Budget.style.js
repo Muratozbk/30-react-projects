@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 
 export const BudgetStyle = styled.h3`
+display: flex;
 input{
     outline:none;
     border: none;
@@ -16,6 +17,10 @@ input{
     ::-webkit-outer-spin-button{
         -webkit-appearance: none;
         margin: 0;
+    }
+    &:focus{
+        background: #fff;
+        color: #333;
     }
 }
 `;

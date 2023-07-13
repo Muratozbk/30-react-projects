@@ -1,4 +1,4 @@
-import React from 'react'
+import { useState, useRef, useEffect } from 'react'
 import Title from '../components/Title'
 import Button from '../components/Button'
 import ExpensesForm from './components/ExpensesForm'
@@ -7,6 +7,22 @@ import { BudgetStyle } from './components/styles/Budget.style'
 
 export default function ExpensesCalculatorApp() {
     document.body.style.background = '#eee'
+    const [expenses, setExpenses] = useState('');
+
+    const [date, setDate] = useState('')
+    const [amount, setAmount] = useState('')
+    const [charge, setCharge] = useState('')
+    const [budget, setBudget] = useState('')
+
+    const changeBudget = e => {
+        // setBudget(e.target.value)
+        setBudget(inputBudget.current.value)
+    }
+
+    let inputBudget = useRef()
+    useEffect(() => {
+        inputBudget.current.focus()
+    })
 
     return (
         <main className='container' style={{ padding: '0 15px' }}>
@@ -19,12 +35,15 @@ export default function ExpensesCalculatorApp() {
                 gap: '25px', margin: '1rem'
             }}>
                 <aside>
-                    <ExpensesForm />
-                    <section className='card mt-2 bg-primary text-light'>
+                    <ExpensesForm date={date}
+                        charge={charge} amount={amount} />
+                    <section className='card mt-2 bg-primary text-light'
+                        style={{ textAlign: 'end' }}>
                         <div className="card-body">
                             <BudgetStyle>
                                 <h3>Budget : $</h3>
-                                <input type="number" value='' />
+                                <input type="number" onChange={changeBudget}
+                                    value={budget} ref={inputBudget} />
                             </BudgetStyle>
                             <h3 className='mb-1'>Total Expenses: $</h3>
                             {/* Calc economies */}
