@@ -3,6 +3,7 @@ import Title from '../components/Title'
 import Button from '../components/Button'
 import ExpensesForm from './components/ExpensesForm'
 import ExpensesList from './components/ExpensesList'
+import { BudgetStyle } from './components/styles/Budget.style'
 
 export default function ExpensesCalculatorApp() {
     document.body.style.background = '#eee'
@@ -21,10 +22,10 @@ export default function ExpensesCalculatorApp() {
                     <ExpensesForm />
                     <section className='card mt-2 bg-primary text-light'>
                         <div className="card-body">
-                            {/* <BudgetSyle> */}
-                            <h3>Budget : $</h3>
-                            <input type="number" value='' />
-                            {/* </BudgetSyle> */}
+                            <BudgetStyle>
+                                <h3>Budget : $</h3>
+                                <input type="number" value='' />
+                            </BudgetStyle>
                             <h3 className='mb-1'>Total Expenses: $</h3>
                             {/* Calc economies */}
                             <h3>Economies: $</h3>
