@@ -88,7 +88,10 @@ export default function ExpensesCalculatorApp() {
                     </section>
                 </aside>
                 <section>
-                    <ExpensesList expenses={expenses} />
+                    <ExpensesList expenses={expenses}
+                    // handleDelete={handleDelete} 
+                    // handleEdit={handleEdit}
+                    />
                 </section>
             </section>
 

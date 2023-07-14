@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const BudgetStyle = styled.h3`
+export const BudgetStyle = styled.div`
 display: flex;
 input{
     outline:none;

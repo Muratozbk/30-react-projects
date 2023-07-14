@@ -19,7 +19,7 @@ export default function ExpenseItem({
                 <div className="text-success">
                     ${amount}
                 </div>
-                <div>
+                <div className='d-flex'>
                     <button className='btn btn-sm'
                         onClick={() => handleEdit(id)}>
                         <MdEdit />
