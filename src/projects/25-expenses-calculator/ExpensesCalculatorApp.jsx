@@ -4,6 +4,7 @@ import Button from '../components/Button'
 import ExpensesForm from './components/ExpensesForm'
 import ExpensesList from './components/ExpensesList'
 import { BudgetStyle } from './components/styles/Budget.style'
+import { v4 as uuidV4 } from 'uuid'
 
 const initialExpenses = localStorage.getItem('expenses')
     ? JSON.parse(localStorage.getItem('expenses')) : [];
@@ -16,6 +17,8 @@ export default function ExpensesCalculatorApp() {
     const [amount, setAmount] = useState('')
     const [charge, setCharge] = useState('')
     const [budget, setBudget] = useState('')
+
+    const [id, setId] = useState(0)
 
     const changeBudget = e => {
         // setBudget(e.target.value)
@@ -30,20 +33,28 @@ export default function ExpensesCalculatorApp() {
     }
     const handleAmount = (e) => {
         setAmount(e.target.value);
-
-        let tempExpenses = expenses.map(item => {
-            return item
-        })
-        setExpenses(tempExpenses)
     }
 
+    let edit;
     const handleSubmit = (e) => {
-        e.preventDefault()
+        e.preventDefault();
+        if (date !== '' && charge !== '' && amount > 0) {
+            if (edit) {
+                let tempExpenses = expenses.map((item) => {
+                    return item.id === id ? { ...item, date, charge, amount }
+                        : item;
+                })
+                setExpenses(tempExpenses)
+            } else {
+                const singleExpense = { id: uuidV4(), date, charge, amount }
+                setExpenses([...expenses, singleExpense])
+            }
+        }
     }
 
     let inputBudget = useRef()
     useEffect(() => {
-        inputBudget.current.focus();
+        inputBudget.current.value === '' && inputBudget.current.focus();
         localStorage.setItem('expenses', JSON.stringify(expenses))
     }, [expenses])
 
