@@ -16,7 +16,7 @@ padding: 0.5;
 margin-bottom: 1rem;
 border-radius: 5px;
 transition: all .3s ease;
-&.expense-details{
+.expense-details{
     width: 70%;
     display: grid;
     grid-template-columns: 4fr 1fr 1fr;

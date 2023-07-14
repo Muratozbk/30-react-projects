@@ -87,11 +87,12 @@ export default function ExpensesCalculatorApp() {
                         </div>
                     </section>
                 </aside>
+                <section>
+                    <ExpensesList expenses={expenses} />
+                </section>
             </section>
 
-            <section>
-                <ExpensesList />
-            </section>
+
         </main>
     )
 }
