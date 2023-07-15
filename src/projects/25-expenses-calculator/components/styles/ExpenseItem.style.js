@@ -30,5 +30,5 @@ transition: all .3s ease;
 &.edit{
     color: lightgray;
 }
-animation: ${animateExpensesStyle} 2s linear ;
+animation: ${animateExpensesStyle} 0.2s linear ;
 `

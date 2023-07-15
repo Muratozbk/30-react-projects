@@ -58,6 +58,21 @@ export default function ExpensesCalculatorApp() {
         localStorage.setItem('expenses', JSON.stringify(expenses))
     }, [expenses])
 
+    // Handle Clear all expenses
+    const clearAllExpenses = () => {
+        setExpenses([])
+        //Alert
+    }
+
+    //handle delete one expense
+    const handleDelete = (id) => {
+        if (window.confirm('Delete expense?')) {
+            let filteredExpense = expenses.filter(expense => expense.id !== id)
+            setExpenses(filteredExpense);
+            // todo alert
+        }
+    }
+
     return (
         <main className='container' style={{ padding: '0 15px' }}>
             <Title text={'Expenses Calculator'} classes={'subtitle mt-1 mb-1'} />
@@ -89,8 +104,9 @@ export default function ExpensesCalculatorApp() {
                 </aside>
                 <section>
                     <ExpensesList expenses={expenses}
-                    // handleDelete={handleDelete} 
-                    // handleEdit={handleEdit}
+                        handleDelete={handleDelete}
+                        // handleEdit={handleEdit}
+                        handleClearAllExpenses={clearAllExpenses}
                     />
                 </section>
             </section>
