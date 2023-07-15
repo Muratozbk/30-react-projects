@@ -3,7 +3,7 @@ import Button from '../../components/Button'
 import FormGroup from '../../components/FormGroup'
 import { MdEdit, MdAddCircle } from 'react-icons/md'
 
-export default function ExpensesForm({ amount, handleAmount, edit, handleCharge, charge, handleDate, date, handleSubmit }) {
+export default function ExpensesForm({ amount, handleAmount, edit, handleCharge, charge, handleDate, date, handleSubmit, cancelEdit }) {
     return (
         <form onSubmit={handleSubmit}
             className='card bg-primary text-light'>
@@ -26,9 +26,14 @@ export default function ExpensesForm({ amount, handleAmount, edit, handleCharge,
                     values={amount}
                     onChange={handleAmount}
                     placeholder={'e.g. 1500'} />
-                {edit ? (<Button btnClass={'btn-block'}
-                    icon={<MdEdit className='btn-icon' />}
-                    text='Edit' />) : (
+                {edit ? (<>
+                    <Button btnClass={'btn-block'}
+                        icon={<MdEdit className='btn-icon' />}
+                        text='Edit' />
+                    <Button text='Cancel' btnClass={'btn-danger'}
+                        onClick={cancelEdit} />
+                </>
+                ) : (
                     <Button btnClass={'btn-warning'}
                         icon={<MdAddCircle className='btn-icon' />}
                         text='Add' />

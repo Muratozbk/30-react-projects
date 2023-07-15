@@ -20,6 +20,8 @@ export default function ExpensesCalculatorApp() {
 
     const [id, setId] = useState(0)
 
+    const [edit, setEdit] = useState(false)
+
     const changeBudget = e => {
         // setBudget(e.target.value)
         setBudget(inputBudget.current.value)
@@ -35,20 +37,26 @@ export default function ExpensesCalculatorApp() {
         setAmount(e.target.value);
     }
 
-    let edit;
     const handleSubmit = (e) => {
         e.preventDefault();
-        if (date !== '' && charge !== '' && amount > 0) {
+        if (charge !== '' && amount > 0) {
             if (edit) {
                 let tempExpenses = expenses.map((item) => {
                     return item.id === id ? { ...item, date, charge, amount }
                         : item;
                 })
-                setExpenses(tempExpenses)
+                setExpenses(tempExpenses);
+                setEdit(false)
+                //todo alert
             } else {
                 const singleExpense = { id: uuidV4(), date, charge, amount }
                 setExpenses([...expenses, singleExpense])
+                //todo alert
             }
+            setCharge('');
+            setAmount('');
+        } else {
+            //todo alert
         }
     }
 
@@ -73,6 +81,22 @@ export default function ExpensesCalculatorApp() {
         }
     }
 
+    const handleEdit = (id) => {
+        let editedExpense = expenses.find(expense => expense.id === id);
+        let { charge, amount, date } = editedExpense;
+        setCharge(charge);
+        setAmount(amount);
+        setDate(date)
+        setId(id);
+        setEdit(true)
+    }
+    const cancelEdit = () => {
+        setEdit(false)
+        setCharge('');
+        setAmount('');
+        setDate('')
+    }
+
     return (
         <main className='container' style={{ padding: '0 15px' }}>
             <Title text={'Expenses Calculator'} classes={'subtitle mt-1 mb-1'} />
@@ -87,7 +111,8 @@ export default function ExpensesCalculatorApp() {
                     <ExpensesForm date={date} handleDate={handleDate}
                         charge={charge} handleCharge={handleCharge}
                         amount={amount} handleAmount={handleAmount}
-                        handleSubmit={handleSubmit} />
+                        handleSubmit={handleSubmit}
+                        edit={edit} cancelEdit={cancelEdit} />
                     <section className='card mt-2 bg-primary text-light'
                         style={{ textAlign: 'end' }}>
                         <div className="card-body">
@@ -105,7 +130,7 @@ export default function ExpensesCalculatorApp() {
                 <section>
                     <ExpensesList expenses={expenses}
                         handleDelete={handleDelete}
-                        // handleEdit={handleEdit}
+                        handleEdit={handleEdit}
                         handleClearAllExpenses={clearAllExpenses}
                     />
                 </section>
