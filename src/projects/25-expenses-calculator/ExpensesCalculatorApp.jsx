@@ -121,9 +121,11 @@ export default function ExpensesCalculatorApp() {
                                 <input type="number" onChange={changeBudget}
                                     value={budget} ref={inputBudget} />
                             </BudgetStyle>
-                            <h3 className='mb-1'>Total Expenses: $</h3>
+                            <h3 className='mb-1'>Total Expenses: $ {expenses.reduce((total, expense) => {
+                                return total += parseInt(expense.amount, 10)
+                            }, 0)} </h3>
                             {/* Calc economies */}
-                            <h3>Economies: $</h3>
+                            <h3>Economies: $ {calcEconomies(budget, expenses)} </h3>
                         </div>
                     </section>
                 </aside>
@@ -138,5 +140,13 @@ export default function ExpensesCalculatorApp() {
 
 
         </main>
+    )
+}
+
+function calcEconomies(budget, expenses) {
+    return (
+        budget - expenses.reduce((total, expense) => {
+            return total += parseInt(expense.amount, 10)
+        }, 0)
     )
 }
