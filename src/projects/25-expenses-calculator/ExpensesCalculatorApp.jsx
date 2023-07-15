@@ -5,6 +5,7 @@ import ExpensesForm from './components/ExpensesForm'
 import ExpensesList from './components/ExpensesList'
 import { BudgetStyle } from './components/styles/Budget.style'
 import { v4 as uuidV4 } from 'uuid'
+import Alert from './components/Alert'
 
 const initialExpenses = localStorage.getItem('expenses')
     ? JSON.parse(localStorage.getItem('expenses')) : [];
@@ -22,6 +23,10 @@ export default function ExpensesCalculatorApp() {
 
     const [edit, setEdit] = useState(false)
 
+    const [alert, setAlert] = useState({
+        show: false
+    })
+
     const changeBudget = e => {
         // setBudget(e.target.value)
         setBudget(inputBudget.current.value)
@@ -37,6 +42,12 @@ export default function ExpensesCalculatorApp() {
         setAmount(e.target.value);
     }
 
+    const handleAlert = ({ type, text }) => {
+        setAlert({ show: true, type, text });
+        setTimeout(() =>
+            setAlert({ show: false }), 3000)
+    }
+
     const handleSubmit = (e) => {
         e.preventDefault();
         if (charge !== '' && amount > 0) {
@@ -48,15 +59,18 @@ export default function ExpensesCalculatorApp() {
                 setExpenses(tempExpenses);
                 setEdit(false)
                 //todo alert
+                handleAlert({ type: 'success', text: 'Expense Edited' })
             } else {
                 const singleExpense = { id: uuidV4(), date, charge, amount }
                 setExpenses([...expenses, singleExpense])
                 //todo alert
+                handleAlert({ type: 'success', text: 'Expense added' })
             }
             setCharge('');
             setAmount('');
         } else {
             //todo alert
+            handleAlert({ type: 'danger', text: 'Please complete all fields' })
         }
     }
 
@@ -69,7 +83,7 @@ export default function ExpensesCalculatorApp() {
     // Handle Clear all expenses
     const clearAllExpenses = () => {
         setExpenses([])
-        //Alert
+        handleAlert({ type: 'danger', text: 'All expenses deleted' })
     }
 
     //handle delete one expense
@@ -78,6 +92,7 @@ export default function ExpensesCalculatorApp() {
             let filteredExpense = expenses.filter(expense => expense.id !== id)
             setExpenses(filteredExpense);
             // todo alert
+            handleAlert({ type: 'danger', text: 'Expense Deleted' })
         }
     }
 
@@ -97,10 +112,20 @@ export default function ExpensesCalculatorApp() {
         setDate('')
     }
 
+    function calcEconomies(budget, expenses) {
+        return (
+            budget - expenses.reduce((total, expense) => {
+                return total += parseInt(expense.amount, 10)
+            }, 0)
+        )
+    }
+
     return (
         <main className='container' style={{ padding: '0 15px' }}>
             <Title text={'Expenses Calculator'} classes={'subtitle mt-1 mb-1'} />
             {/* Alert comp */}
+            {alert.show &&
+                <Alert type={alert.type} text={alert.text} />}
 
             <section style={{
                 display: 'grid'
@@ -143,10 +168,3 @@ export default function ExpensesCalculatorApp() {
     )
 }
 
-function calcEconomies(budget, expenses) {
-    return (
-        budget - expenses.reduce((total, expense) => {
-            return total += parseInt(expense.amount, 10)
-        }, 0)
-    )
-}
