@@ -9,7 +9,7 @@ export default function ExpensesForm({ amount, handleAmount, edit, handleCharge,
             className='card bg-primary text-light'>
             <div className="card-body">
                 <FormGroup
-                    labelText={'Data'}
+                    labelText={'Date'}
                     inputType={'date'}
                     values={date}
                     onChange={handleDate}

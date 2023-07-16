@@ -1,6 +1,5 @@
 import { useState, useRef, useEffect } from 'react'
 import Title from '../components/Title'
-import Button from '../components/Button'
 import ExpensesForm from './components/ExpensesForm'
 import ExpensesList from './components/ExpensesList'
 import { BudgetStyle } from './components/styles/Budget.style'
@@ -11,7 +10,7 @@ const initialExpenses = localStorage.getItem('expenses')
     ? JSON.parse(localStorage.getItem('expenses')) : [];
 
 export default function ExpensesCalculatorApp() {
-    document.body.style.background = '#eee'
+    document.body.style.background = '#ddd'
     const [expenses, setExpenses] = useState(initialExpenses);
 
     const [date, setDate] = useState('')
