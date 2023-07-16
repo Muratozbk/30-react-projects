@@ -1,4 +1,5 @@
 import './App.css';
+import MortgageCalculatorApp from './projects/026-mortgage-calculator/MortgageCalculatorApp';
 // import TextAnimationApp from './projects/18-text-animation/TextAnimationApp';
 // import CompoundInterestRate from './projects/19-compound-interest-rate/CompoundInterestRate';
 // import SpacePenguinApp from './projects/20-space-penguin/SpacePenguinApp';
@@ -6,7 +7,7 @@ import './App.css';
 // import CardGameUI from './projects/22-card-game/CardGameUI';
 // import AnimatedLoginForm from './projects/23-Animated-login/AnimatedLoginForm';
 // import PhoneBookMainApp from './projects/24-phone-book/PhoneBookMainApp';
-import ExpensesCalculatorApp from './projects/25-expenses-calculator/ExpensesCalculatorApp';
+// import ExpensesCalculatorApp from './projects/25-expenses-calculator/ExpensesCalculatorApp';
 // import NotesApp from './projects/16-notes-app/NotesApp';
 // import ResponsiveNavApp from './projects/17-responsive-navigation/ResponsiveNavApp';
 // import RegistrationFormApp from './projects/15-Form-Registration/RegistrationFormApp';
@@ -53,8 +54,9 @@ function App() {
       {/* <CardGameUI /> */}
       {/* <AnimatedLoginForm /> */}
       {/* <PhoneBookMainApp /> */}
+      {/* <ExpensesCalculatorApp /> */}
+      <MortgageCalculatorApp />
 
-      <ExpensesCalculatorApp />
     </div>
   );
 }
