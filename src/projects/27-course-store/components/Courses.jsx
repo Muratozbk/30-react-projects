@@ -1,16 +1,17 @@
 import React from 'react'
+import Course from './Course'
+export default function Courses({ list }) {
 
-export default function Courses() {
     return (
         <ul className='d-flex mt-2'
-            stye={{ flexWrap: "wrap", gap: "30px" }}>
+            stye={{
+                flexWrap: "wrap", gap: "30px"
+            }}>
+            {list.map((item) => (
+                <Course key={item.id} course={item} />
+            )
 
-            <li>Course 1</li>
-            <li>Course 2</li>
-            <li>Course 3</li>
-            <li>Course 4</li>
-            <li>Course 5</li>
-            <li>Course 6</li>
+            )}
         </ul>
     )
 }
