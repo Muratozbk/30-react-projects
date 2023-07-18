@@ -16,25 +16,25 @@ export const coursesDB = [
     {
         id: 3,
         title: "The Road to React",
-        price: 19.99,
+        price: 39.99,
         img: react
     },
     {
         id: 4,
         title: "The Road to React",
-        price: 19.99,
+        price: 9.99,
         img: react
     },
     {
         id: 5,
-        title: "The Road to React",
-        price: 19.99,
+        title: "The Road to JavaScript",
+        price: 14.99,
         img: react
     },
     {
         id: 6,
         title: "The Road to React",
-        price: 19.99,
+        price: 17.99,
         img: react
     },
 ]

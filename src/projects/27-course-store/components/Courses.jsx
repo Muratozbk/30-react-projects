@@ -4,7 +4,7 @@ export default function Courses({ list }) {
 
     return (
         <ul className='d-flex mt-2'
-            stye={{
+            style={{
                 flexWrap: "wrap", gap: "30px"
             }}>
             {list.map((item) => (

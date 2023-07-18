@@ -1,16 +1,25 @@
-import React from 'react'
+import { useState } from 'react'
 import Button from '../components/Button'
 import Courses from './components/Courses'
 
 import { coursesDB } from './db/coursesDB'
+import { currenciesDB } from './db/currenciesDB';
+
 document.body.style.backgroundColor = "#282c34"
-document.body.style.color = "#eee"
+document.body.style.color = "#eee";
+
 export default function CourseStoreApp() {
+    const [currency, setCurrency] = useState(currenciesDB.euro)
+
     return (
         <div className='container' style={{ padding: "1rem" }}>
-            <h4 className="mb-2">Change currency:</h4>
-            <Button btnClass={'btn-light'} />
-            <header className="text-center mt-4 my-4">
+            <h4 className="mb-1">Change currency:</h4>
+            {Object.values(currenciesDB).map(cur => (
+                <Button btnClass={'btn-light'}
+                    key={cur.code}
+                    text={cur.code}
+                    onClick={() => setCurrency(cur)} />))}
+            <header className="text-center mt-2 mb-2">
                 <h1 className="title">Course</h1>
                 <h2 className="mb-2" style={{
                     textTransform: 'uppercase'
