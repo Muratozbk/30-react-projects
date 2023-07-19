@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react'
+import React, { useState, useEffect } from 'react'
 import Button from "../../components/Button"
 import { CurrencyContext } from '../context/currencies-context'
 
@@ -12,9 +12,23 @@ export default function Course({ course }) {
         currency: currency.code
     }).format(price * currency.conversionRate);
 
+    const [courseBg, setCourseBg] = useState();
+
+    useEffect(() => {
+        if (currency.code === 'USD') {
+            setCourseBg('card-info')
+        }
+        if (currency.code === 'EUR') {
+            setCourseBg('card-primary')
+        }
+        if (currency.code === 'GBP') {
+            setCourseBg('card-warning')
+        }
+    }, [currency.code])
+
     return (
-        <li className={`card mb-2`}
-            style={{ width: 250, backgroundColor: "inherit" }}>
+        <li className={`card mb-2 ${courseBg}`}
+            style={{ width: 250, }}>
             <div className="card-header">{title}</div>
             <img src={img} alt="course img" style={{
                 height: "100%",

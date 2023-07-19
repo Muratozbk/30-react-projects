@@ -1,3 +1,3 @@
-import React, { useContext, createContext } from "react";
+import React, { useContext } from "react";
 
 export const CurrencyContext = React.createContext(null)

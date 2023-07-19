@@ -11,7 +11,7 @@ document.body.style.backgroundColor = "#282c34"
 document.body.style.color = "#eee";
 
 export default function CourseStoreApp() {
-    const [currency, setCurrency] = useState(currenciesDB.euro)
+    const [currency, setCurrency] = useState(currenciesDB.Euro)
 
     return (
         <CurrencyContext.Provider value={currency}>
