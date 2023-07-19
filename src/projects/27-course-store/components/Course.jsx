@@ -1,8 +1,16 @@
-import React from 'react'
+import React, { useState, useContext } from 'react'
 import Button from "../../components/Button"
+import { CurrencyContext } from '../context/currencies-context'
 
 export default function Course({ course }) {
-    const { id, title, price, img } = course
+    const currency = React.useContext(CurrencyContext)
+
+    const { title, price, img } = course
+
+    const contextPrice = new Intl.NumberFormat("en-us", {
+        style: "currency",
+        currency: currency.code
+    }).format(price * currency.conversionRate);
 
     return (
         <li className={`card mb-2`}
@@ -14,11 +22,11 @@ export default function Course({ course }) {
             }} />
             <p className="card-body">
                 <small>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumen autem distinctio atque</small>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.</small>
             </p>
             <div className="card-footer d-flex"
                 style={{ justifyContent: "space-between" }}>
-                <h4>{price} </h4>
+                <h4>{contextPrice} </h4>
                 <Button btnClass={"btn-success"}
                     text='BUY' />
             </div>
