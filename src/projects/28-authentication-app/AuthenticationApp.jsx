@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import Title from '../components/Title'
 import FormGroup from '../components/FormGroup'
+import { Wrapper } from './components/Wrapper.style'
 
 export default function AuthenticationApp() {
     const [ui, setUi] = useState({
@@ -8,12 +9,14 @@ export default function AuthenticationApp() {
         title: "Authenticate"
     })
 
+    const [animateDenied, setAnimateDenied] = useState(false)
+
     return (
         <div className='container' style={{ width: 300 }}>
             <Title text={ui.title} />
 
             {ui.wrapper && (
-                <>
+                <Wrapper className={animateDenied && "active"}>
                     <FormGroup inputType={"text"}
                         labelText={"User name"}
                         placeholder={"Enter your name"}
@@ -22,7 +25,8 @@ export default function AuthenticationApp() {
                         labelText={"Password"}
                         placeholder={"Enter your password"}
                         values="" />
-                </>)}
+                </Wrapper>)}
+            {/* <Auth/>  */}
         </div>
     )
 }
