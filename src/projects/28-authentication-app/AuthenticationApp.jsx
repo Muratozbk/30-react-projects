@@ -2,6 +2,7 @@ import { useState } from 'react'
 import Title from '../components/Title'
 import FormGroup from '../components/FormGroup'
 import { Wrapper } from './components/Wrapper.style'
+import Auth from './components/Auth'
 
 export default function AuthenticationApp() {
     const [ui, setUi] = useState({
@@ -26,7 +27,7 @@ export default function AuthenticationApp() {
                         placeholder={"Enter your password"}
                         values="" />
                 </Wrapper>)}
-            {/* <Auth/>  */}
+            <Auth />
         </div>
     )
 }
