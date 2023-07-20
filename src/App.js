@@ -1,6 +1,7 @@
 import './App.css';
 import MortgageCalculatorApp from './projects/026-mortgage-calculator/MortgageCalculatorApp';
 import CourseStoreApp from './projects/27-course-store/CourseStoreApp';
+import AuthenticationApp from './projects/28-authentication-app/AuthenticationApp';
 // import TextAnimationApp from './projects/18-text-animation/TextAnimationApp';
 // import CompoundInterestRate from './projects/19-compound-interest-rate/CompoundInterestRate';
 // import SpacePenguinApp from './projects/20-space-penguin/SpacePenguinApp';
@@ -57,7 +58,8 @@ function App() {
       {/* <PhoneBookMainApp /> */}
       {/* <ExpensesCalculatorApp /> */}
       {/* <MortgageCalculatorApp /> */}
-      <CourseStoreApp />
+      {/* <CourseStoreApp /> */}
+      <AuthenticationApp />
 
     </div>
   );
