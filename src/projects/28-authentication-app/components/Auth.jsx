@@ -14,12 +14,12 @@ export default function Auth() {
             ) : null}
             {auth.status === null ?
                 (<Button btnClass={"btn-success btn-block"}
-                    text='Login' />) :
+                    text='Login' onClick={auth.login} />) :
                 auth.status === true ?
                     (<Button btnClass={"btn-danger btn-block"}
-                        text='Log out' />) :
+                        text='Log out' onClick={auth.logout} />) :
                     (<Button btnClass={"btn-primary btn-block"}
-                        text='Try again' />)}
+                        text='Try again' onClick={auth.login} />)}
         </div>
     )
 }
