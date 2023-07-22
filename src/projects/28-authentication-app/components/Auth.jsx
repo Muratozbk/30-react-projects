@@ -8,8 +8,8 @@ export default function Auth() {
     const auth = useContext(AuthContext)
     console.log(auth)
     return (
-        <div>
-            {auth.status === null ? ("") : auth.status === true ? (
+        <div >
+            {auth.status === true ? (
                 <Alert type={"success"} message={"Success"} />
             ) : null}
             {auth.status === null ?

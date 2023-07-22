@@ -31,7 +31,7 @@ export default function AuthenticationApp() {
     const [authStatus, setAuthStatus] = useState(null);
 
     const login = () => {
-        if (userAuth.name === "Norbert" && userAuth.password === "1234") {
+        if ((userAuth.name === "Norbert" && userAuth.password === "1234") || (userAuth.name === "Murat" && userAuth.password === "1234")) {
             setAuthStatus(true);
             clearInputs()
             authenticate()
@@ -63,14 +63,18 @@ export default function AuthenticationApp() {
     }
 
     return (
-        <div className='container' style={{ width: 300 }}>
+        <form className='container'
+            style={{ width: 300 }}
+            onSubmit={e =>
+                e.preventDefault()}>
             <Title text={ui.title} />
             <AuthContext.Provider value={{
                 status: authStatus,
                 login: login, logout: logout
             }}>
                 {ui.wrapper && (
-                    <Wrapper className={animateDenied && "active"}>
+                    <Wrapper className={animateDenied && "active"}
+                    >
                         <FormGroup inputType={"text"}
                             labelText={"User name"}
                             placeholder={"Enter your name"}
@@ -81,10 +85,11 @@ export default function AuthenticationApp() {
                             labelText={"Password"}
                             placeholder={"Enter your password"}
                             values={userAuth.password}
-                            onChange={handleChangePassword} />
+                            onChange={handleChangePassword}
+                        />
                     </Wrapper>)}
                 <Auth />
             </AuthContext.Provider>
-        </div>
+        </form>
     )
 }
