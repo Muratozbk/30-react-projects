@@ -38,19 +38,41 @@ export default function SpeechNarrator({ text }) {
         )
     }
 
+    const [showPlay, setShowPlay] = useState(false)
+    const [rateValue, setRateValue] = useState(1)
+
+    const handlePlay = () => {
+        synth.speak(utterance);
+        synth.resume()
+        setShowPlay(true)
+    }
+    const handlePause = () => {
+        synth.pause()
+        setShowPlay(false)
+    }
+
+    const handleRateValue = (e) => {
+        setRateValue(e.target.value)
+    }
+    utterance.rate = rateValue;
+
     return (
         <div className='container d-flex flex-column '
             style={{ gap: 30, margin: "3rem 0" }}>
             <h1>SpeechNarrator</h1>
-            <AiFillRobot style={robotStyle} className='text-primary' />
-            <AiOutlineRobot style={robotStyle} />
+            {showPlay ? (<AiFillRobot style={robotStyle}
+                className='text-primary'
+                onClick={handlePause} />) :
+                (<AiOutlineRobot style={robotStyle}
+                    onClick={handlePlay} />)}
             <HighlightedText text={text}
                 {...highlightSection} />
             <div className="form-group">
-                <label>Rate: {'rateValue'} </label>
+                <label>Rate: {rateValue} </label>
                 <input type="range" step="0.1"
                     max="2" min=".5"
-                    value={"rateValue"} />
+                    value={rateValue}
+                    onChange={handleRateValue} />
             </div>
         </div>
     )
