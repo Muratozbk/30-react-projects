@@ -1,8 +1,8 @@
 import './App.css';
-import MortgageCalculatorApp from './projects/026-mortgage-calculator/MortgageCalculatorApp';
-import CourseStoreApp from './projects/27-course-store/CourseStoreApp';
-import AuthenticationApp from './projects/28-authentication-app/AuthenticationApp';
-import SpeechSynthApp from './projects/29-speech-synthesizer/SpeechSynthApp';
+// import MortgageCalculatorApp from './projects/026-mortgage-calculator/MortgageCalculatorApp';
+// import CourseStoreApp from './projects/27-course-store/CourseStoreApp';
+// import AuthenticationApp from './projects/28-authentication-app/AuthenticationApp';
+// import SpeechSynthApp from './projects/29-speech-synthesizer/SpeechSynthApp';
 import LazyLoadingApp from './projects/30-lazy-loading/LazyLoadingApp';
 // import TextAnimationApp from './projects/18-text-animation/TextAnimationApp';
 // import CompoundInterestRate from './projects/19-compound-interest-rate/CompoundInterestRate';
