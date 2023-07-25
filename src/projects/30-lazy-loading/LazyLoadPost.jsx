@@ -15,7 +15,7 @@ export default function LazyLoadPost({ title, img }) {
 
             <div className="card-body d-flex" style={{ gap: 10 }}>
                 <LazyLoadImage src={img}
-                    width={500}
+                    width={400}
                     height={"fit-content"}
                     effect='blur' />
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad debitis voluptatibus temporibus. Quidem, consequatur vitae?</p>
