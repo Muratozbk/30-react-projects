@@ -3,9 +3,9 @@ import './App.css';
 // import CourseStoreApp from './projects/27-course-store/CourseStoreApp';
 // import AuthenticationApp from './projects/28-authentication-app/AuthenticationApp';
 // import SpeechSynthApp from './projects/29-speech-synthesizer/SpeechSynthApp';
-import LazyLoadingApp from './projects/30-lazy-loading/LazyLoadingApp';
+// import LazyLoadingApp from './projects/30-lazy-loading/LazyLoadingApp';
 // import TextAnimationApp from './projects/18-text-animation/TextAnimationApp';
-// import CompoundInterestRate from './projects/19-compound-interest-rate/CompoundInterestRate';
+import CompoundInterestRate from './projects/19-compound-interest-rate/CompoundInterestRate';
 // import SpacePenguinApp from './projects/20-space-penguin/SpacePenguinApp';
 // import TaskTrackerApp from './projects/21-task-tracker/TaskTrackerApp';
 // import CardGameUI from './projects/22-card-game/CardGameUI';
@@ -52,7 +52,7 @@ function App() {
       {/* <NotesApp /> */}
       {/* <ResponsiveNavApp /> */}
       {/* <TextAnimationApp /> */}
-      {/* <CompoundInterestRate /> */}
+      <CompoundInterestRate />
       {/* <SpacePenguinApp /> */}
       {/* <TaskTrackerApp /> */}
       {/* <CardGameUI /> */}
@@ -63,7 +63,7 @@ function App() {
       {/* <CourseStoreApp /> */}
       {/* <AuthenticationApp /> */}
       {/* <SpeechSynthApp /> */}
-      <LazyLoadingApp />
+      {/* <LazyLoadingApp /> */}
     </div>
   );
 }
